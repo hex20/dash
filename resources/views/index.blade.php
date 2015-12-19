@@ -6,6 +6,11 @@
         <link type="text/css" rel="stylesheet" href="{{ URL::asset('main.css') }}">
     </head>
     <body>
-
+    <h2>Hi</h2>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    <script>
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myNewChart = new Chart(ctx).PolarArea(data);
+    </script>
     </body>
 </html>
