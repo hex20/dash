@@ -10,7 +10,8 @@
         <canvas id="myChart" width="400" height="400"></canvas>
     <script>
         var ctx = document.getElementById("myChart").getContext("2d");
-        var myNewChart = new Chart(ctx).PolarArea(data);
+        var myNewChart = new Chart(ctx).Line(data, options);
+        var data = {}
     </script>
     </body>
 </html>
