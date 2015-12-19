@@ -26,13 +26,13 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
-            $getData = json_decode(file_get_contents('http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=213'), true);
-            $items = (array) $getData['return'];
-            $next = (array) $items['markets'];
-            $nextNext = (array) $next['DRK'];
-            $lastPrice = array_pull($nextNext, 'lasttradeprice');
-            $lastTime = array_pull($nextNext, 'lasttradetime');
-            $volume = array_pull($nextNext, 'volume');
+            $getData = json_decode(file_get_contents('http://coinmarketcap-nexuist.rhcloud.com/api/dash'), true);
+            $items = (array)$getData;
+            $priceArray = (array)$items['price'];
+            $volumeArray = (array)$items['volume'];
+            $lastPrice = array_pull($priceArray, 'usd');
+            $lastTime = array_pull($items, 'timestamp');
+            $volume = array_pull($volumeArray, 'usd');
             $price = new Price;
             $price->price = $lastPrice;
             $price->time = $lastTime;
