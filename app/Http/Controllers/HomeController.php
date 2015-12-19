@@ -11,7 +11,7 @@ class HomeController extends Controller {
 
     public function index() {
         $data = DB::table('price')->orderBy('created_at', 'asc')->get();
-        dd($data);
+        dd(json_encode($data));
         return view('index');
     }
 
