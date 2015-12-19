@@ -10,8 +10,8 @@ use DB;
 class HomeController extends Controller {
 
     public function index() {
-        $data = DB::table('price')->orderBy('created_at', 'asc')->get();
-        dd(json_encode($data));
+        $data = DB::table('price')->get();
+        dd($data);
         return view('index');
     }
 
