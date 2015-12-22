@@ -21,6 +21,8 @@ class Price extends Model implements AuthenticatableContract, AuthorizableContra
         'price',
         'time',
         'volume',
+        'created_at',
+        'updated_at'
     ];
 
     protected $hidden = [

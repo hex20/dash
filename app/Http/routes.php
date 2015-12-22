@@ -16,5 +16,10 @@ Route::get('/', [
     'as' => 'home',
 ]);
 
+Route::get('/data', [
+    'uses' => '\App\Http\Controllers\HomeController@getData',
+    'as' => 'getData',
+]);
+
 
 
