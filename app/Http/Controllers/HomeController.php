@@ -10,10 +10,13 @@ use DB;
 class HomeController extends Controller {
 
     public function index() {
+        $getData = json_decode(file_get_contents('http://coinmarketcap-nexuist.rhcloud.com/api/dash'), true);
+        dd($getData);
+
         /*        $test = Price::where('id' < 48)->get();
                 dd($test);*/
         //$data = DB::table('price')->where('created_at', '<', '2015-12-19 10:55:01')->get(288);
-        $data = DB::table('price')->orderBy('id', 'desc')->take(288)->get();
+        //$data = DB::table('price')->orderBy('id', 'desc')->take(288)->get();
         //dd($data);
         return view('index');
     }
