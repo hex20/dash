@@ -10,7 +10,7 @@ use DB;
 class HomeController extends Controller {
 
     public function index() {
-        $getData = json_decode(file_get_contents('http://coinmarketcap-nexuist.rhcloud.com/api/dash'), true);
+        $getData = json_decode(file_get_contents('http://coinmarketcap.northpole.ro/api/v5/DASH.json'), true);
         dd($getData);
 
         /*        $test = Price::where('id' < 48)->get();
