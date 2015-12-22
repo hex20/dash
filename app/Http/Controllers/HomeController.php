@@ -11,18 +11,6 @@ class HomeController extends Controller {
 
     public function index() {
 
-        $getData = json_decode(file_get_contents('http://coinmarketcap.northpole.ro/api/v5/DASH.json'), true);
-        $items = (array)$getData;
-        $priceArray = (array)$items['price'];
-        $volumeArray = (array)$items['volume24'];
-        $lastPrice = array_pull($priceArray, 'usd');
-        $lastTime = array_pull($items, 'timestamp');
-        $volume = array_pull($volumeArray, 'usd');
-        $price = new Price;
-        $price->price = $lastPrice;
-        $price->time = $lastTime;
-        $price->volume = $volume;
-        $price->save();
 
         /*        $test = Price::where('id' < 48)->get();
                 dd($test);*/
